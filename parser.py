@@ -1,43 +1,43 @@
 from pathlib import Path
 
+import pytest
+
 from pharmpy import Model
 from pharmpy.plugins.utils import PluginError
 from pharmpy.modeling import explicit_odes
 
-model_dir = Path('/home/rikard/devel/scripts/pharmpy_testing/models')
-#model_dir = Path('/home/rikard/devel/scripts/pharmpy_testing/ddmore')
+model_dir = Path(__file__).parent / 'models'
+ddmore_dir = Path(__file__).parent / 'ddmore'
 
-n = 0
-failed = 0
+models = []
+if model_dir.exists():
+    models += list(model_dir.iterdir())
+if ddmore_dir.exists():
+    models += list(ddmore_dir.iterdir())
 
 
-def test_models():
-    global n, failed
-    for f in model_dir.iterdir():
-        n += 1
-        try:
-            model = Model(f)
-        except PluginError:
-            continue
-        print(model.name)
+@pytest.mark.parametrize('path', models)
+def test_models(path):
+    f = path
+    try:
+        model = Model(f)
+    except PluginError:
+        return
+    print(model.name)
 
-        # Test round-trip
-        with open(f, 'r', encoding='latin-1') as fh:
-            content = fh.read()
-        assert content == str(model)
+    # Test round-trip
+    with open(f, 'r', encoding='latin-1') as fh:
+        content = fh.read()
+    assert content == str(model)
 
-        # Parse parameters
-        params = model.parameters
+    # Parse parameters
+    params = model.parameters
 
-        # Parse PK/PRED/ERROR
-        try:
-            statements = model.statements
-        except Exception as e:
-            print(e)
-            failed += 1
+    # Parse PK/PRED/ERROR
+    try:
+        statements = model.statements
+    except Exception as e:
+        print(e)
 
-        # Test explicit_odes transformation
-        explicit_odes(model)
-
-print(f'{n} models tested')
-print(f'{failed} models failed in statements')
+    # Test explicit_odes transformation
+    explicit_odes(model)

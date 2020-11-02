@@ -1,3 +1,4 @@
+#import argparse
 from pathlib import Path
 
 import pytest
@@ -6,19 +7,9 @@ from pharmpy import Model
 from pharmpy.plugins.utils import PluginError
 from pharmpy.modeling import explicit_odes
 
-model_dir = Path(__file__).parent / 'models'
-ddmore_dir = Path(__file__).parent / 'ddmore'
 
-models = []
-if model_dir.exists():
-    models += list(model_dir.iterdir())
-if ddmore_dir.exists():
-    models += list(ddmore_dir.iterdir())
-
-
-@pytest.mark.parametrize('path', models)
-def test_models(path):
-    f = path
+def test_models(model_path):
+    f = model_path
     try:
         model = Model(f)
     except PluginError:
@@ -39,5 +30,6 @@ def test_models(path):
     except Exception as e:
         print(e)
 
-    # Test explicit_odes transformation
+
+def test_explicit_odes(model):
     explicit_odes(model)

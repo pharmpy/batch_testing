@@ -1,30 +1,17 @@
-#import argparse
-from pathlib import Path
-
-import pytest
-
-from pharmpy import Model
-from pharmpy.plugins.utils import PluginError
-from pharmpy.modeling import additive_error, combined_error, proportional_error, remove_error
+from pharmpy.modeling import set_additive_error_model, set_combined_error_model, set_proportional_error_model, remove_error_model
 
 
 def test_remove(model):
-    print(model.source.path)
-    remove_error(model)
-    model.update_source()
+    remove_error_model(model)
+
 
 def test_additive(model):
-    print(model.source.path)
-    additive_error(model)
-    model.update_source()
+    set_additive_error_model(model)
+
 
 def test_proportional(model):
-    print(model.source.path)
-    proportional_error(model)
-    model.update_source()
-   
-def test_combined(model):
-    print(model.source.path)
-    combined_error(model)
-    model.update_source()
+    set_proportional_error_model(model)
 
+
+def test_combined(model):
+    set_combined_error_model(model)

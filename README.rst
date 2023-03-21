@@ -1,10 +1,10 @@
 .. start-longdesc
 
 Scripts for testing Pharmpy with batches of models.
-Run from pharmpy directory with
+Activate one of the testing environments of Pharmpy and then run
 
 .. code-block::
 
-  tox -e py38 -- pytest -s ../batch_testing/parser.py --model_dir=mypath
+  tox -e py311 -- --model_dir=mypath tests
 
 .. end-longdesc

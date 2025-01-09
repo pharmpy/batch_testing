@@ -2,19 +2,23 @@ from pharmpy.modeling import read_model, set_additive_error_model, set_combined_
 
 
 def test_remove_error(model_path):
-    # validate: Removing the error model doesn't crash
     model = read_model(model_path)
-    remove_error_model(model)
+    # validate: remove_error_model doesn't crash
+    m2 = remove_error_model(model)
+    # validate: remove_error_model does not change the code before the ODE system ($PK)
+    assert model.statements.ode_system is None or model.statements.before_odes == m2.statements.before_odes
+    # validate: remove_error_model does not change the ODE system
+    assert model.statements.ode_system == m2.statements.ode_system
 
 
 #def test_additive(model_path):
-    # Segfaults
+    # Segfaults for some model
 #    model = read_model(model_path)
 #    set_additive_error_model(model)
 
 
 #def test_proportional(model_path):
-    # Segfaults
+    # Segfaults for some model
 #    model = read_model(model_path)
 #    set_proportional_error_model(model)
 

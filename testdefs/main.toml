@@ -50,9 +50,6 @@ skip = true     # NEWIND not supported in update
 [run13.remove_error]
 skip = true     # NEWIND not supported in update
 
-[run20.remove_error]
-skip = true     # Symbol T not defined
-
 [run32.remove_error]
 skip = true     # NEWIND not supported in update
 
@@ -68,9 +65,6 @@ skip = true     # NEWIND not supported in update
 [run92.remove_error]
 skip = true     # NEWIND not supported in update
 
-[run102.remove_error]
-skip = true     # Symbol T not defined
-
 [run1230k.remove_error]
 skip = true     # Symbol Y defined after being used
 
@@ -78,7 +72,7 @@ skip = true     # Symbol Y defined after being used
 skip = true     # NEWIND not supported in update
 
 [run136a.remove_error]
-skip = true     # Symbol T not defined
+skip = true     # Symbol A(2) not defined
 
 [run146.remove_error]
 skip = true     # NEWIND not supported in update
@@ -98,9 +92,6 @@ skip = true     # NEWIND not supported in update
 [run189_tomas.remove_error]
 skip = true     # Symbol SIGMA(1) not defined
 
-[run207a.remove_error]
-skip = true     # Symbol T not defined 
-
 [run236.remove_error]
 skip = true     # Symbol Y defined after being used
 
@@ -110,14 +101,11 @@ skip = true     # Symbol STRA not defined
 [run119tf.remove_error]
 skip = true     # Symbol Y defined after being used
 
-[run343.remove_error]
-skip = true     # Symbol T not defined 
-
 [run364.remove_error]
 skip = true     # NEWIND not supported in update
 
 [run40b.remove_error]
-skip = true     # Symbol T not defined 
+skip = true     # Symbol DV not defined 
 
 [run525_clean5.remove_error]
 skip = true     # NEWIND not supported in update
@@ -146,9 +134,6 @@ skip = true     # Symbol Y defined after being used
 [run882.remove_error]
 skip = true     # Symbol THETA(1) not defined
 
-[run89_gupta.remove_error]
-skip = true     # Symbol T not defined 
-
 [run1004.remove_error]
 skip = true     # Symbol Y defined after being used
 
@@ -157,9 +142,3 @@ skip = true     # NEWIND not supported in update
 
 [run2305.remove_error]
 skip = true     # NEWIND not supported in update
-
-[run7283.remove_error]
-skip = true     # Symbol T not defined 
-
-[tumor_April2013.remove_error]
-skip = true     # Symbol T not defined 

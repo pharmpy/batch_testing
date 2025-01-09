@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from pharmpy.model import Model
+from pharmpy.modeling import read_model
 
 
 def pytest_addoption(parser):
@@ -17,5 +17,5 @@ def pytest_generate_tests(metafunc):
     if 'model_path' in metafunc.fixturenames:
        metafunc.parametrize('model_path', model_paths)
     elif 'model' in metafunc.fixturenames:
-        models = [Model.create_model(model) for model in model_paths]
+        models = [read_model(model) for model in model_paths]
         metafunc.parametrize('model', models)

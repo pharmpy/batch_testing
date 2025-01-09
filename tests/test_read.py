@@ -12,3 +12,4 @@ def test_models(model_path):
     with open(model_path, 'r', encoding='latin-1') as fh:
         content = fh.read()
     assert content == model.code
+    # validate: A NONMEM control stream can be parsed and the model code stays exactly the same

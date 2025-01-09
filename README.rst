@@ -5,7 +5,7 @@ Activate one of the testing environments of Pharmpy and then run
 
 .. code-block::
 
-  pytest --model_dir=mypath tests
+  pytest -n10 --testdefs=testdefs/main.toml tests
 
 .. end-longdesc
 

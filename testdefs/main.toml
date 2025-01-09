@@ -1,0 +1,165 @@
+[main]
+path = "../models"
+
+
+[biomarkers_April2013.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[PDA89.remove_error]
+skip = true     # Symbol THETA(5) not defined
+
+[Executable_gentamicin_pk.remove_error]
+skip = true     # NEWIND not supported in update
+
+[Executable_myelosuppression_dailyANC.remove_error]
+skip = true     # Symbol EVID not defined
+
+[Executable_OriginalModelCode256.remove_error]
+skip = true     # Symbol DV not defined
+
+[Executable_Paracetamol_Zebrafish_345dpf.remove_error]
+skip = true     # Symbol A(2) not defined
+
+[Executable_run35b_ddm2.remove_error]
+skip = true     # NEWIND not supported in update
+
+[final_INH.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[final_MXF.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[final_PZA.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[final_RIF.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[Quartino-AL-2010-Docetaxel.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run1_clometh.remove_error]
+skip = true     # Symbol CLINDU defined after being used
+
+[run009.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run1_Hb.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run13.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run20.remove_error]
+skip = true     # Symbol T not defined
+
+[run32.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run42.remove_error]
+skip = true     # Symbol DV not defined
+
+[run49_cpt_neu.remove_error]
+skip = true     # Symbol THETA(1) not defined
+
+[run64pef.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run92.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run102.remove_error]
+skip = true     # Symbol T not defined
+
+[run1230k.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run133.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run136a.remove_error]
+skip = true     # Symbol T not defined
+
+[run146.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run159_cpt_wbc.remove_error]
+skip = true     # Symbol THETA(1) not defined
+
+[run164.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run168.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run189.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run189_tomas.remove_error]
+skip = true     # Symbol SIGMA(1) not defined
+
+[run207a.remove_error]
+skip = true     # Symbol T not defined 
+
+[run236.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run265.remove_error]
+skip = true     # Symbol STRA not defined
+
+[run119tf.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run343.remove_error]
+skip = true     # Symbol T not defined 
+
+[run364.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run40b.remove_error]
+skip = true     # Symbol T not defined 
+
+[run525_clean5.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run649.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run649_clean.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run678.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run687.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run696b.remove_error]
+skip = true     # Symbol CLRL not defined 
+
+[run800.remove_error]
+skip = true     # MIXNUM not supported in update
+
+[run83_morphine.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run882.remove_error]
+skip = true     # Symbol THETA(1) not defined
+
+[run89_gupta.remove_error]
+skip = true     # Symbol T not defined 
+
+[run1004.remove_error]
+skip = true     # Symbol Y defined after being used
+
+[run1032_clean.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run2305.remove_error]
+skip = true     # NEWIND not supported in update
+
+[run7283.remove_error]
+skip = true     # Symbol T not defined 
+
+[tumor_April2013.remove_error]
+skip = true     # Symbol T not defined 

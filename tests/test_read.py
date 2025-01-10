@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from pharmpy.modeling import get_omegas, get_sigmas, get_thetas, read_model
+from pharmpy.modeling import get_model_code, get_omegas, get_sigmas, get_thetas, read_model
 
 
 def find_in_code(model, regex):
@@ -20,6 +20,9 @@ def test_models(model_path):
         content = fh.read()
     # validate: read_model can parse a NONMEM control stream so that the model code is not altered
     assert content == model.code
+    # validate: get_model_code returns the model code
+    assert get_model_code(model) == content
+
 
     have_error = find_in_code(model, r'^\$ERROR')
     # validate: read_model A NONMEM model with $ERROR will have statements in model.statements.after_odes

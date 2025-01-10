@@ -65,3 +65,8 @@ def test_models(model_path):
     nsims_nonmem = count_in_code(model, r'^\$SIM;')
     nsims_pharmpy = len([step for step in model.execution_steps if isinstance(step, SimulationStep)])
     assert nsims_nonmem == nsims_pharmpy
+
+    # validate: read_model $COV is parsed
+    have_cov = find_in_code(model, r'^\$COV')
+    param_uncert = model.execution_steps[-1].parameter_uncertainty_method
+    assert bool(have_cov) == (param_uncert is not None)

@@ -3,12 +3,18 @@ from pathlib import Path
 
 import pytest
 
+from pharmpy.model import EstimationStep, SimulationStep
 from pharmpy.modeling import get_model_code, get_omegas, get_sigmas, get_thetas, read_model
 
 
 def find_in_code(model, regex):
     m = re.search(regex, model.code, re.MULTILINE)
     return m
+
+
+def count_in_code(model, regex):
+    m = re.findall(regex, model.code, re.MULTILINE)
+    return len(m)
 
 
 def test_models(model_path):
@@ -49,3 +55,13 @@ def test_models(model_path):
 
     # validate: read_model All NONMEM models have at least one sigma
     assert len(get_sigmas(model)) > 0
+
+    # validate: read_model All $ESTIMATION are parsed
+    nests_nonmem = count_in_code(model, r'^\$EST')
+    nests_pharmpy = len([step for step in model.execution_steps if isinstance(step, EstimationStep)])
+    assert nests_nonmem == nests_pharmpy
+
+    # validate: read_model All $SIMULATION are parsed
+    nsims_nonmem = count_in_code(model, r'^\$SIM;')
+    nsims_pharmpy = len([step for step in model.execution_steps if isinstance(step, SimulationStep)])
+    assert nsims_nonmem == nsims_pharmpy

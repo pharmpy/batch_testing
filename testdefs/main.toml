@@ -145,3 +145,23 @@ skip = true     # NEWIND not supported in update
 
 [run2305.remove_parameter_uncertainty_step]
 skip = true
+
+[Executable_Paracetamol_Zebrafish_345dpf.has_first_order_absorption]
+skip = true
+error = "Cannot find central compartment" 
+
+[Executable_OriginalModelCode.has_first_order_absorption]
+skip = true
+error = "Cannot find central compartment" 
+
+[PDA89.has_first_order_absorption]
+skip = true
+error = "Cannot find central compartment" 
+
+[Executable_ParacetamolInNewborns.has_first_order_absorption]
+skip = true
+error = "Cannot find central compartment" 
+
+[run102_moxo.has_first_order_absorption]
+skip = "true"
+error = "No dosing compartment exists"

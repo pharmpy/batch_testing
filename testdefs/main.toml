@@ -161,7 +161,3 @@ error = "Cannot find central compartment"
 [Executable_ParacetamolInNewborns.has_first_order_absorption]
 skip = true
 error = "Cannot find central compartment" 
-
-[run102_moxo.has_first_order_absorption]
-skip = "true"
-error = "No dosing compartment exists"

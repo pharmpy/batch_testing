@@ -1,11 +1,19 @@
 import re
 
-from pharmpy.modeling import read_model, has_first_order_absorption
+from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes
 
 
 def find_in_code(model, regex):
     m = re.search(regex, model.code, re.MULTILINE)
     return bool(m)
+
+
+def find_advan(model):
+    m = re.search(r'ADVAN(\d+)', model.code, re.MULTILINE)
+    if m is None:
+        return m
+    else:
+        return int(m.group(1))
 
 
 def test_has_first_order_absorption(model_path):
@@ -32,3 +40,22 @@ def test_has_first_order_absorption(model_path):
     assert has_advan11 and not fo_abs or not has_advan11
     # validate: has_first_order_absorption detects first order absorption for ADVAN12 models
     assert has_advan12 and fo_abs or not has_advan12
+
+
+def test_has_linear_odes(model_path):
+    model = read_model(model_path)
+    advan = find_advan(model)
+    linear_odes = has_linear_odes(model)
+    linear_advans = (1, 2, 3, 4, 5, 7, 11, 12)
+    # validate: has_linear_odes Gives True for all linear advans (1, 2, 3, 4, 5, 6, 11 and 12)
+    assert advan in linear_advans and linear_odes is True or advan not in linear_advans
+    # validate: has_linear_odes Gives False if model has no ode system
+    assert advan is None and linear_odes is False or advan is not None
+
+
+def test_has_odes(model_path):
+    model = read_model(model_path)
+    pk = find_in_code(model, r"^\s*\$PK")
+    odes = has_odes(model)
+    # validate: has_odes Gives True if model has $PK and False otherwise
+    assert pk and odes is True or not pk and odes is False

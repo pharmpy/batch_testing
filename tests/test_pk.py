@@ -1,6 +1,8 @@
 import re
 
-from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes
+import pytest
+
+from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes, has_linear_odes_with_real_eigenvalues
 
 
 def find_in_code(model, regex):
@@ -59,3 +61,14 @@ def test_has_odes(model_path):
     odes = has_odes(model)
     # validate: has_odes Gives True if model has $PK and False otherwise
     assert pk and odes is True or not pk and odes is False
+
+
+@pytest.mark.timeout(10)
+def test_has_linear_odes_with_real_eigenvalues(model_path):
+    model = read_model(model_path)
+    advan = find_advan(model)
+    # validate: has_linear_odes_with_real_eigenvalues does not take longer than 10s to terminate
+    real = has_linear_odes_with_real_eigenvalues(model)
+    trivial_advans = (1, 2, 3, 4, 11, 12)
+    # validate: has_linear_odes_with_real_eigenvalues gives True for advans 1, 2, 3, 4, 11 and 12
+    assert advan in trivial_advans and real is True or advan not in trivial_advans

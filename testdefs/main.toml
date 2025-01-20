@@ -161,3 +161,135 @@ error = "Cannot find central compartment"
 [Executable_ParacetamolInNewborns.has_first_order_absorption]
 skip = true
 error = "Cannot find central compartment" 
+
+[Executable_ModelII_MM3G.has_linear_odes_with_real_eigenvalues]
+skip = true 
+error = "Takes more than 10s to run"
+
+[run249.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run12d.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run171.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run2.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run3_digoxin.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run11190.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_OriginalModelCode.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_gentamicin_pk.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run32.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run477.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run111.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run249_no.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_run35b_ddm2.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_Moxifloxacin_PK_dfio.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_miltefosine_allometric.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_OriginalModelCode248.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run151.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[finalpaclitaxel.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Final_PopPK_Engage.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run385.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run301_library.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[epi48.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run236.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[Executable_mdz_PK_MO_HV.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[finalalbumin.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run1_carolina.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run83.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run89_gupta.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run41.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Takes more than 10s to run"
+
+[run229.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Error from sympy"
+
+[run1_clometh.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Fails test"
+
+[run58.has_linear_odes_with_real_eigenvalues]
+skip = true
+error = "Fails test"

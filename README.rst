@@ -1,7 +1,10 @@
 .. start-longdesc
 
 Scripts for testing Pharmpy with batches of models.
-Activate one of the testing environments of Pharmpy and then run
+
+1. Activate one of the testing environments of Pharmpy.
+2. `pip install pytest-timeout`
+3. Run:
 
 .. code-block::
 
@@ -12,6 +15,10 @@ Activate one of the testing environments of Pharmpy and then run
 Workflow
 --------
 
-1. Add validation story as issues with priority tags
-2. Use clear, short titles for issues to easily get an overview (e.g. "Test that $SIZES is added correctly when adding thetas")
-3. Implement test where reference point is not using Pharmpy nor is hard coded (e.g. use regex to check that $SIZES has been added)
+Put the user requirement you want to validate in a comment tag in the test file. For example:
+
+```python
+# validate: has_first_order_absorption detects first order absorption for ADVAN2 models
+```
+
+Implement test where reference point is not using Pharmpy nor is hard coded (e.g. use regex to check which ADVAN a model has)

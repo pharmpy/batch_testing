@@ -8,9 +8,6 @@ skip = true     # Symbol Y defined after being used
 [PDA89.remove_error]
 skip = true     # Symbol THETA(5) not defined
 
-[Executable_gentamicin_pk.remove_error]
-skip = true     # NEWIND not supported in update
-
 [Executable_myelosuppression_dailyANC.remove_error]
 skip = true     # Symbol EVID not defined
 
@@ -50,17 +47,11 @@ skip = true     # NEWIND not supported in update
 [run13.remove_error]
 skip = true     # NEWIND not supported in update
 
-[run32.remove_error]
-skip = true     # NEWIND not supported in update
-
 [run42.remove_error]
 skip = true     # Symbol DV not defined
 
 [run49_cpt_neu.remove_error]
 skip = true     # Symbol THETA(1) not defined
-
-[run64pef.remove_error]
-skip = true     # NEWIND not supported in update
 
 [run92.remove_error]
 skip = true     # NEWIND not supported in update

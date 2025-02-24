@@ -59,10 +59,6 @@ error = "Symbol DOSTIM is not defined"
 [run136a.remove_error]
 skip = true     # Symbol A(2) not defined
 
-[run146.remove_error]
-skip = true
-error = "Symbol OBIL defined after being used"
-
 [run159_cpt_wbc.remove_error]
 skip = true     # Symbol THETA(1) not defined
 

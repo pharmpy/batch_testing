@@ -17,9 +17,6 @@ skip = true     # Symbol DV not defined
 [Executable_Paracetamol_Zebrafish_345dpf.remove_error]
 skip = true     # Symbol A(2) not defined
 
-[Executable_run35b_ddm2.remove_error]
-skip = true     # NEWIND not supported in update
-
 [final_INH.remove_error]
 skip = true     # Symbol Y defined after being used
 
@@ -39,13 +36,8 @@ skip = true     # Symbol Y defined after being used
 skip = true     # Symbol CLINDU defined after being used
 
 [run009.remove_error]
-skip = true     # NEWIND not supported in update
-
-[run1_Hb.remove_error]
-skip = true     # NEWIND not supported in update
-
-[run13.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol Y defined after being used"
 
 [run42.remove_error]
 skip = true     # Symbol DV not defined
@@ -54,19 +46,22 @@ skip = true     # Symbol DV not defined
 skip = true     # Symbol THETA(1) not defined
 
 [run92.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol ICALL is not defined"
 
 [run1230k.remove_error]
 skip = true     # Symbol Y defined after being used
 
 [run133.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol DOSTIM is not defined"
 
 [run136a.remove_error]
 skip = true     # Symbol A(2) not defined
 
 [run146.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol OBIL defined after being used"
 
 [run159_cpt_wbc.remove_error]
 skip = true     # Symbol THETA(1) not defined
@@ -78,7 +73,8 @@ skip = true     # Symbol Y defined after being used
 skip = true     # Symbol Y defined after being used
 
 [run189.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol Y defined after being used"
 
 [run189_tomas.remove_error]
 skip = true     # Symbol SIGMA(1) not defined
@@ -92,26 +88,22 @@ skip = true     # Symbol STRA not defined
 [run119tf.remove_error]
 skip = true     # Symbol Y defined after being used
 
-[run364.remove_error]
-skip = true     # NEWIND not supported in update
-
 [run40b.remove_error]
 skip = true     # Symbol DV not defined 
 
-[run525_clean5.remove_error]
-skip = true     # NEWIND not supported in update
-
 [run649.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true     # ICALL not supported in update
 
 [run649_clean.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol ICALL is not defined"
 
 [run678.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true     # DOSTIM not supported in update
 
 [run687.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol DOSTIM is not defined"
 
 [run696b.remove_error]
 skip = true     # Symbol CLRL not defined 
@@ -129,10 +121,11 @@ skip = true     # Symbol THETA(1) not defined
 skip = true     # Symbol Y defined after being used
 
 [run1032_clean.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true
+error = "Symbol DOSTIM is not defined"
 
 [run2305.remove_error]
-skip = true     # NEWIND not supported in update
+skip = true     # DOSTIM not supported in update
 
 [run2305.remove_parameter_uncertainty_step]
 skip = true

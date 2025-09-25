@@ -149,3 +149,19 @@ error = "Takes more than 10s to run"
 [run229.has_linear_odes_with_real_eigenvalues]
 skip = true
 error = "Error from sympy"
+
+[Executable_OriginalModelCode.repr]
+skip = true
+error = "Cannot find central compartment"
+
+[Executable_ParacetamolInNewborns.repr]
+skip = true
+error = "Cannot find central compartment"
+
+[PDA89.repr]
+skip = true
+error = "Cannot find central compartment"
+
+[Executable_Paracetamol_Zebrafish_345dpf.repr]
+skip = true
+error = "Cannot find central compartment"

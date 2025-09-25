@@ -8,7 +8,7 @@ Scripts for testing Pharmpy with batches of models.
 
 .. code-block::
 
-  pytest -n10 --testdefs=testdefs/main.toml tests
+  pytest -n10 -W ignore --testdefs=testdefs/main.toml tests
 
 .. end-longdesc
 

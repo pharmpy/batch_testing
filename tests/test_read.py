@@ -56,6 +56,12 @@ def test_models(model_path):
     # validate: read_model All NONMEM models have at least one sigma
     assert len(get_sigmas(model)) > 0
 
+    # validate: read_model All NONMEM models have at least one eta
+    assert len(model.random_variables.etas) > 0
+
+    # validate: read_model All NONMEM models have at least one epsilon
+    assert len(model.random_variables.epsilons) > 0
+
     # validate: read_model All $ESTIMATION are parsed
     nests_nonmem = count_in_code(model, r'^\$EST')
     nests_pharmpy = len([step for step in model.execution_steps if isinstance(step, EstimationStep)])

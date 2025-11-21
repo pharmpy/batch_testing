@@ -18,6 +18,11 @@ def find_advan(model):
         return int(m.group(1))
 
 
+def has_pk(model):
+    pk = find_in_code(model, r"^\s*\$PK")
+    return pk
+
+
 def test_has_first_order_absorption(model_path):
     model = read_model(model_path)
     has_advan1 = find_in_code(model, r"ADVAN1\D")
@@ -42,6 +47,8 @@ def test_has_first_order_absorption(model_path):
     assert has_advan11 and not fo_abs or not has_advan11
     # validate: has_first_order_absorption detects first order absorption for ADVAN12 models
     assert has_advan12 and fo_abs or not has_advan12
+    # validate: has_first_order_absorption gives False for non-PK models
+    assert (not has_pk(model) and not fo_abs) or has_pk(model)
 
 
 def test_has_linear_odes(model_path):

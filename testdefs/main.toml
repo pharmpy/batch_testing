@@ -165,3 +165,19 @@ error = "Cannot find central compartment"
 [Executable_Paracetamol_Zebrafish_345dpf.repr]
 skip = true
 error = "Cannot find central compartment"
+
+[Executable_ParacetamolInNewborns.has_first_order_elimination]
+skip = true
+error = "Cannot find central compartment"
+
+[Executable_OriginalModelCode.has_first_order_elimination]
+skip = true
+error = "Cannot find central compartment"
+
+[PDA89.has_first_order_elimination]
+skip = true
+error = "Cannot find central compartment"
+
+[Executable_Paracetamol_Zebrafish_345dpf.has_first_order_elimination]
+skip = true
+error = "Cannot find central compartment"

@@ -2,7 +2,7 @@ import re
 
 import pytest
 
-from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes, has_linear_odes_with_real_eigenvalues
+from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes, has_linear_odes_with_real_eigenvalues, has_first_order_elimination
 
 
 def find_in_code(model, regex):
@@ -49,6 +49,34 @@ def test_has_first_order_absorption(model_path):
     assert has_advan12 and fo_abs or not has_advan12
     # validate: has_first_order_absorption gives False for non-PK models
     assert (not has_pk(model) and not fo_abs) or has_pk(model)
+
+
+def test_has_first_order_elimination(model_path):
+    model = read_model(model_path)
+    has_advan1 = find_in_code(model, r"ADVAN1\D")
+    has_advan2 = find_in_code(model, r"ADVAN2\D")
+    has_advan3 = find_in_code(model, r"ADVAN3\D")
+    has_advan4 = find_in_code(model, r"ADVAN4\D")
+    has_advan11 = find_in_code(model, r"ADVAN11\D")
+    has_advan12 = find_in_code(model, r"ADVAN12\D")
+    # validate: has_first_order_elimination does not raise
+    fo_elim = has_first_order_elimination(model)
+    # validate: has_first_order_elimination always returns either True or False
+    assert fo_elim is True or fo_elim is False
+    # validate: has_first_order_elimination detects first order elimination for ADVAN1 models
+    assert has_advan1 and fo_elim or not has_advan1
+    # validate: has_first_order_elimination detects first order elimination for ADVAN2 models
+    assert has_advan2 and fo_elim or not has_advan2
+    # validate: has_first_order_elimination detects first order elimination for ADVAN3 models
+    assert has_advan3 and fo_elim or not has_advan3
+    # validate: has_first_order_elimination detects first order elimination for ADVAN4 models
+    assert has_advan4 and fo_elim or not has_advan4
+    # validate: has_first_order_elimination detects first order elimination for ADVAN11 models
+    assert has_advan11 and fo_elim or not has_advan11
+    # validate: has_first_order_elimination detects first order elimination for ADVAN12 models
+    assert has_advan12 and fo_elim or not has_advan12
+    # validate: has_first_order_elimination gives False for non-PK models
+    assert (not has_pk(model) and not fo_elim) or has_pk(model)
 
 
 def test_has_linear_odes(model_path):

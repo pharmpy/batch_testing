@@ -2,7 +2,7 @@ import re
 
 import pytest
 
-from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes, has_linear_odes_with_real_eigenvalues, has_first_order_elimination
+from pharmpy.modeling import read_model, has_first_order_absorption, has_linear_odes, has_odes, has_linear_odes_with_real_eigenvalues, has_first_order_elimination, has_instantaneous_absorption
 
 
 def find_in_code(model, regex):
@@ -49,6 +49,36 @@ def test_has_first_order_absorption(model_path):
     assert has_advan12 and fo_abs or not has_advan12
     # validate: has_first_order_absorption gives False for non-PK models
     assert (not has_pk(model) and not fo_abs) or has_pk(model)
+
+
+def test_has_instantaneous_absorption(model_path):
+    model = read_model(model_path)
+    has_advan1 = find_in_code(model, r"ADVAN1\D")
+    has_advan2 = find_in_code(model, r"ADVAN2\D")
+    has_advan3 = find_in_code(model, r"ADVAN3\D")
+    has_advan4 = find_in_code(model, r"ADVAN4\D")
+    has_advan11 = find_in_code(model, r"ADVAN11\D")
+    has_advan12 = find_in_code(model, r"ADVAN12\D")
+
+    # validate: has_instantaneous_absorption does not raise
+    inst_abs = has_instantaneous_absorption(model)
+    # validate: has_instantaneous_absorption always returns either True or False
+    assert inst_abs is True or inst_abs is False
+    # validate: has_instantaneous_absorption detects instantaneous absorption for ADVAN1 models
+    assert has_advan1 and inst_abs or not has_advan1
+    # validate: has_instantaneous_absorption detects no instantaneous absorption for ADVAN2 models
+    assert has_advan2 and not inst_abs or not has_advan2
+    # validate: has_instantaneous_absorption detects instantaneous absorption for ADVAN3 models
+    assert has_advan3 and inst_abs or not has_advan3
+    # validate: has_instantaneous_absorption detects no instantaneous absorption for ADVAN4 models
+    assert has_advan4 and not inst_abs or not has_advan4
+    # validate: has_instantaneous_absorption detects instantaneous absorption for ADVAN11 models
+    assert has_advan11 and inst_abs or not has_advan11
+    # validate: has_instantaneous_absorption detects no instantaneous absorption for ADVAN12 models
+    assert has_advan12 and not inst_abs or not has_advan12
+    # validate: has_instantaneous_absorption gives False for non-PK models
+    assert (not has_pk(model) and not inst_abs) or has_pk(model)
+
 
 
 def test_has_first_order_elimination(model_path):

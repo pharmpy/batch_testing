@@ -5,9 +5,6 @@ path = "../models"
 [biomarkers_April2013.remove_error]
 skip = true     # Symbol Y defined after being used
 
-[PDA89.remove_error]
-skip = true     # Symbol THETA(5) not defined
-
 [Executable_myelosuppression_dailyANC.remove_error]
 skip = true     # Symbol EVID not defined
 

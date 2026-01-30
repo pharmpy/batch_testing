@@ -178,3 +178,7 @@ error = "Cannot find central compartment"
 [Executable_Paracetamol_Zebrafish_345dpf.has_instantaneous_absorption]
 skip = true
 error = "Cannot find central compartment"
+
+[run89.remove_error]
+skip = true
+error = "https://github.com/pharmpy/pharmpy/issues/4333"

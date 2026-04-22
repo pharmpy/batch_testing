@@ -5,12 +5,6 @@ path = "../models"
 [biomarkers_April2013.remove_error]
 skip = true     # Symbol Y defined after being used
 
-[Executable_myelosuppression_dailyANC.remove_error]
-skip = true     # Symbol EVID not defined
-
-[Executable_OriginalModelCode256.remove_error]
-skip = true     # Symbol DV not defined
-
 [Executable_Paracetamol_Zebrafish_345dpf.remove_error]
 skip = true     # Symbol A(2) not defined
 
@@ -80,9 +74,6 @@ skip = true     # Symbol STRA not defined
 
 [run119tf.remove_error]
 skip = true     # Symbol Y defined after being used
-
-[run40b.remove_error]
-skip = true     # Symbol DV not defined 
 
 [run649.remove_error]
 skip = true     # ICALL not supported in update

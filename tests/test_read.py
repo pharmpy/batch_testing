@@ -76,3 +76,6 @@ def test_models(model_path):
     have_cov = find_in_code(model, r'^\$COV')
     param_uncert = model.execution_steps[-1].parameter_uncertainty_method
     assert bool(have_cov) == (param_uncert is not None)
+
+    # validate: read_model A model compares equal to itself
+    assert model == model

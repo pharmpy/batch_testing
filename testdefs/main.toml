@@ -173,3 +173,11 @@ error = "Cannot find central compartment"
 [run89.remove_error]
 skip = true
 error = "https://github.com/pharmpy/pharmpy/issues/4333"
+
+[run24.remove_error]
+skip = true
+error = "Symbol EPS(2) is not defined"
+
+[run24.models]
+skip = true
+error = "Fail get sigmas (since no $SIGMA defined in model)"

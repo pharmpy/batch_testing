@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 from pharmpy.model import EstimationStep, SimulationStep
-from pharmpy.modeling import get_model_code, get_omegas, get_sigmas, get_thetas, read_model
+from pharmpy.modeling import get_model_code, get_omegas, get_sigmas, get_thetas, read_model, set_name, set_description
 
 
 def find_in_code(model, regex):
@@ -23,6 +23,9 @@ def test_models(model_path):
 
     # validate: read_model Model has its name attribute set to the file name without extension
     assert model_path.stem == model.name
+
+    # validate: read_model Model.description is of str type
+    assert isinstance(model.description, str)
 
     # Test round-trip
     with open(model_path, 'r', encoding='latin-1') as fh:
@@ -82,3 +85,21 @@ def test_models(model_path):
 
     # validate: read_model A model compares equal to itself
     assert model == model
+
+    # validate: set_name Creates a model with the new name
+    new_name = "My new name"
+    old_name = model.name
+    model2 = set_name(model, new_name)
+    assert model2.name == new_name
+
+    # validate: set_name Original model keeps its name
+    assert model.name == old_name
+
+    # validate: set_description Creates a model with the new description
+    new_description = "This is my model"
+    old_description = model.description
+    model2 = set_description(model, new_description)
+    assert model2.description == new_description
+
+    # validate: set_description Original model keeps its description
+    assert model.description == old_description

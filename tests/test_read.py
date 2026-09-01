@@ -18,8 +18,11 @@ def count_in_code(model, regex):
 
 
 def test_models(model_path):
-    # validate: read_model does not crash
+    # validate: read_model Does not crash
     model = read_model(model_path)
+
+    # validate: read_model Model has its name attribute set to the file name without extension
+    assert model_path.stem == model.name
 
     # Test round-trip
     with open(model_path, 'r', encoding='latin-1') as fh:

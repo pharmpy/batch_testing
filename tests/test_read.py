@@ -17,6 +17,12 @@ def count_in_code(model, regex):
     return len(m)
 
 
+def get_record(model, name):
+    m = re.search(fr"^\s*\${name}(.*)$", model.code, re.MULTILINE)
+    content = m.group(1).strip()
+    return content
+
+
 def test_models(model_path):
     # validate: read_model Does not crash
     model = read_model(model_path)
@@ -24,8 +30,8 @@ def test_models(model_path):
     # validate: read_model Model has its name attribute set to the file name without extension
     assert model_path.stem == model.name
 
-    # validate: read_model Model.description is of str type
-    assert isinstance(model.description, str)
+    # validate: read_model Model.description is taken from $PROBLEM
+    assert model.description == get_record(model, "(?:PROBLEM|PROB)")
 
     # Test round-trip
     with open(model_path, 'r', encoding='latin-1') as fh:

@@ -10,6 +10,12 @@ Scripts for testing Pharmpy with batches of models.
 
   pytest -n10 -W ignore --testdefs=testdefs/main.toml tests
 
+or:
+
+.. code-block::
+
+  pytest -n10 -W ignore --testdefs=testdefs/tools.toml tests -m tools
+
 .. end-longdesc
 
 Workflow

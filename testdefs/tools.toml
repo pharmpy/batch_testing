@@ -1,0 +1,12 @@
+[main]
+path = "datasets/"
+project_name = "batch_testing"
+project_ref = ".."
+
+[pheno]
+dataset_path='pheno.dta'
+modeltype='basic_pk'
+administration='iv'
+retries_strategy='skip'
+cl_init=0.01
+vc_init=1.0

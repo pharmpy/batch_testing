@@ -77,11 +77,8 @@ def generate_tool_tests(defs, metafunc):
         del kwargs_item['dataset_path']
         kwargs.append(kwargs_item)
 
-    metafunc.parametrize('proj', [proj]*(len(defs) - 1))
-    metafunc.parametrize('test_name', test_names)
-    metafunc.parametrize('dataset_path', dataset_paths)
-    metafunc.parametrize('kwargs', kwargs)
-
+    options = list(zip([proj]*len(test_names),test_names,dataset_paths,kwargs))
+    metafunc.parametrize('proj,test_name,dataset_path,kwargs', options)
 
 @pytest.fixture(scope="session")
 def tmpdir(request):

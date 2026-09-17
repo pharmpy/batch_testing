@@ -10,7 +10,7 @@ def test_amd(proj, tmpdir, test_name, dataset_path, kwargs):
 
     try:
         name = f'amd_{test_name}'
-        run_amd(input=dataset_path, project=proj, ref=ref, name=name, **kwargs)
+        run_amd(input=dataset_path, project=proj, ref=ref, name=name, seed=12345, **kwargs)
     except Exception:
         raise
     else:

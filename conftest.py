@@ -63,22 +63,25 @@ def generate_tool_tests(defs, metafunc):
     project_ref = defs['main']['project_ref']
     proj = open_project(project_name, ref=project_ref)
 
-    test_names, dataset_paths, kwargs = [], [], []
+    test_names, tool_names, kwargs = [], [], []
     for key, value in defs.items():
         if key == 'main':
             continue
 
         test_names.append(key)
 
-        dataset_path = path_absolute(Path(defs['main']['path']) / value['dataset_path'])
-        dataset_paths.append(dataset_path)
-
         kwargs_item = value.copy()
-        del kwargs_item['dataset_path']
+        if 'dataset_path' in value:
+            dataset_path = path_absolute(Path(defs['main']['path']) / value['dataset_path'])
+            kwargs_item['input'] = dataset_path
+            del kwargs_item['dataset_path']
+
+        tool_names.append(value['tool'])
+        del kwargs_item['tool']
         kwargs.append(kwargs_item)
 
-    options = list(zip([proj]*len(test_names),test_names,dataset_paths,kwargs))
-    metafunc.parametrize('proj,test_name,dataset_path,kwargs', options)
+    options = list(zip([proj]*len(test_names), test_names, tool_names, kwargs))
+    metafunc.parametrize('proj,test_name,tool_name,kwargs', options)
 
 @pytest.fixture(scope="session")
 def tmpdir(request):

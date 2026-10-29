@@ -1,0 +1,13 @@
+version = 1
+
+[[annotations]]
+path = [
+  ".gitignore",
+  "bad_models/badtheta1.mod",
+  "pytest.ini",
+  "README.rst",
+  "testdefs/**",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "None"
+SPDX-License-Identifier = "CC0-1.0"

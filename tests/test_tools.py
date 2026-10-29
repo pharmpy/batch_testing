@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020-2026 Rikard Nordgren and Stella Belin
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 import pytest
 import shutil
 

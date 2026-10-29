@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020-2026 Rikard Nordgren and Stella Belin
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
 from pharmpy.modeling import read_model, set_additive_error_model, set_combined_error_model, set_proportional_error_model, remove_error_model
 
 

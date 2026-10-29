@@ -1,3 +1,9 @@
+|badge1|
+
+.. |badge1| image:: https://img.shields.io/badge/REUSE-compliant-green.svg
+   :target: https://reuse.software
+
+
 .. start-longdesc
 
 Scripts for testing Pharmpy with batches of models.

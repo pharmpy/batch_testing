@@ -29,8 +29,8 @@ Workflow
 
 Put the user requirement you want to validate in a comment tag in the test file. For example:
 
-```python
-# validate: has_first_order_absorption detects first order absorption for ADVAN2 models
-```
+.. code-block::
+
+  # validate: has_first_order_absorption detects first order absorption for ADVAN2 models
 
 Implement test where reference point is not using Pharmpy nor is hard coded (e.g. use regex to check which ADVAN a model has)
